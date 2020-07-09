@@ -1,6 +1,6 @@
 # Publishing artifacts with [Codeartifact](https://aws.amazon.com/de/codeartifact/) and [Packages](https://github.com/features/packages)
 
-Exploration is and always was part of the [reach-now tech](https://medium.com/reachnow-tech) DNA. While we have an established way to publish code artifacts to artifacts store, we are keen to learn more. This repository explores how to publish code artifacts to:
+Exploration is and always was part of the [reach-now tech](https://medium.com/reachnow-tech) DNA. While we have an established way to publish code artifacts to an artifacts store, we are keen to learn more. This repository explores how to publish code artifacts to:
 - [GitHub Packages](https://github.com/features/packages):
     - [packages/](packages/README.md)
 - [AWS Codeartifact](https://aws.amazon.com/de/codeartifact/):

@@ -120,5 +120,5 @@ The endpoint returns a string from `some-library`:
 
 ```
 curl localhost:8080/hello
-Kotlin
+Bus
 ```

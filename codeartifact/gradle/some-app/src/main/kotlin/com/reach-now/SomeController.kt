@@ -13,6 +13,6 @@ class HelloController {
     @Get("/")  
     @Produces(MediaType.TEXT_PLAIN) 
     fun index(): String {
-        return lib.kotlinLanguage().name;
+        return lib.busVehicle().name;
     }
 }

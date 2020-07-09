@@ -34,7 +34,7 @@ export CODEARTIFACT_AUTH_TOKEN=$(aws codeartifact get-authorization-token \
 
 ### Library
 
-Create `.npmrc` file for your GitHub namespace/organisation (eg.g. [reachnow](https://github.com/reach-now/)). Modules will be pushed and pulled to the repo when using this namespace/organisation.
+Create `.npmrc` file for your GitHub namespace/organisation (e.g. [reachnow](https://github.com/reach-now/)). Modules will be pushed and pulled to the repo when using this namespace/organisation.
 
 ```
 cd npm/some-library

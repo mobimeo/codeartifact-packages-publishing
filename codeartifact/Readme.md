@@ -109,7 +109,7 @@ export REPOSITORY_ENDPOINT=$(aws codeartifact get-repository-endpoint \
 echo "reachnowRepoUrl=$REPOSITORY_ENDPOINT" >> gradle.properties
 ```
 
-Install dependency from _[Domain.GithubNamespace/Organization].some-library_ (e.g. `com.reach-now.some-library`) and run app:
+Install dependency from _some-library_ (e.g. `com.reach-now.some-library`) and run app:
 
 ```
 gradle clean build jar

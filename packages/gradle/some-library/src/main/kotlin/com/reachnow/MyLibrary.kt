@@ -1,16 +1,16 @@
 package com.reachnow
 
 /**
- * The `Language` type defines a programming language with a name and hotness score.
+ * The `Vehicle` type defines a Vehicle with a name and speed level.
  *
- * @property name The name of the language.
- * @property hotness A score from 1 to 10 of user enthusiasm. 10 = so hot right now
+ * @property name The name of the vehicle.
+ * @property speed A score from 1 to 10
  */
-data class Language(val name: String, val hotness: Int)
+data class Vehicle(val name: String, val speed: Int)
 
 class MyLibrary {
     /**
-     * @return data relating to the Kotlin {@code Lanugage}.
+     * @return data relating to the Kotlin {@code Vehicle}.
      */
-    fun kotlinLanguage() = Language("Kotlin", 10)
+    fun busVehicle() = Vehicle("Bus", 5)
 }

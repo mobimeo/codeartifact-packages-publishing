@@ -28,7 +28,7 @@ jobs:
         && CURRENT_VERSION=1.$E2ND.$E3RD-gh-pkg-$d \
         && echo $CURRENT_VERSION \
         && npm version $CURRENT_VERSION --no-git-tag-version
-    - run: npm install packages/npm/some-library 
-    - run: npm publish packages/npm/some-library 
+    - run: cd packages/npm/some-library && npm install
+    - run: cd packages/npm/some-library && npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.PCK_MNGR_TOKEN_NPM }}

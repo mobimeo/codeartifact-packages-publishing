@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC",
+  "license": "Apache License 2.0",
   "dependencies": {
-    "@reach-now/some-library": "^1.0.0"
+    "@reach-now/codeartifact-packages-publishing": "^1.0.0"
   }
 }

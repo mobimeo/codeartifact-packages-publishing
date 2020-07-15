@@ -26,6 +26,7 @@ jobs:
         && E3RD=$(echo $PACKAGE_VERSION | cut -d'.' -f 3)  \
         && echo "E3RD: $E3RD" \
         && CURRENT_VERSION=1.$E2ND.$E3RD-gh-pkg-$d \
+        && echo $CURRENT_VERSION \
         && npm version $CURRENT_VERSION --no-git-tag-version
     - run: npm install packages/npm/some-library 
     - run: npm publish packages/npm/some-library 

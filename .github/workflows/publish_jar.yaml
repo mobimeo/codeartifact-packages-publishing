@@ -19,7 +19,7 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
           restore-keys: ${{ runner.os }}-gradle
       - name: gradle build
-        run: cd gradle/some-library && ./gradlew build
+        run: cd packages/gradle/some-library && ./gradlew build
       - name: gradle publish
         run: |
           cd packages/gradle/some-library \

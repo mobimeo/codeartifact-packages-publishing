@@ -38,7 +38,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/reach-now/codeartifact-packages-publishing")
+            url = uri("https://maven.pkg.github.com/reach-now/codeartifact-packages-publishing/")
             credentials {
                 username = project.findProperty("gpr.user") as String?
                 password = project.findProperty("gpr.key") as String?
@@ -50,7 +50,7 @@ publishing {
             from(components["java"])
             groupId = groupId
             val timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd--HH-mm-ss-SSS"))
-            version = "${version.toString()}-$timestamp"
+            version = "$version-$timestamp"
         }
     }
 }

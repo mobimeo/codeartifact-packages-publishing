@@ -18,10 +18,16 @@ jobs:
           path: ~/gradle/some-library/.gradle/caches
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
           restore-keys: ${{ runner.os }}-gradle
-      - name: gradle build and publish
+      - name: gradle build
         run: |
           cd packages/gradle/some-library \
-          && ./gradlew build -Pgpr.user=lotharschulz -Pgpr.key=${{ secrets.PCK_MNGR_TOKEN_GRADLE }} publish
+          && ./gradlew build
+      - name: gradle publish
+        run: |
+          cd packages/gradle/some-library \
+          && ls -lisa \
+          && pwd \
+          && ./gradlew -Pgpr.user=lotharschulz -Pgpr.key=${{ secrets.PCK_MNGR_TOKEN_GRADLE }} publish
 
 
 

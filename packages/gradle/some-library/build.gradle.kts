@@ -50,7 +50,7 @@ publishing {
             from(components["java"])
             groupId = groupId
             val timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd--HH-mm-ss-SSS"))
-            version = "$version" // -$timestamp
+            //version = "$version" // -$timestamp
         }
     }
 }

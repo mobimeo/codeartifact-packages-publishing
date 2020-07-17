@@ -19,13 +19,11 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
           restore-keys: ${{ runner.os }}-gradle
       - name: gradle build
-        run: |
-          cd packages/gradle/some-library \
-          && ./gradlew build
+        run: cd gradle/some-library && ./gradlew build
       - name: gradle publish
         run: |
           cd packages/gradle/some-library \
-          && ./gradlew -Pgpr.user=lotharschulz -Pgpr.key=${{ secrets.GITHUB_TOKEN }} publish
+          && ./gradlew -Pgpr.user=lotharschulz -Pgpr.key=${{ secrets.PCK_MNGR_TOKEN_GRADLE }} publish
 
 
 

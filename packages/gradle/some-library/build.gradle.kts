@@ -38,7 +38,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/reach-now/codeartifact-packages-publishing/")
+            url = uri("https://maven.pkg.github.com/reach-now/codeartifact-packages-publishing")
             credentials {
                 username = project.findProperty("gpr.user") as String?
                 password = project.findProperty("gpr.key") as String?

@@ -21,11 +21,7 @@ jobs:
       - name: gradle build and publish
         run: |
           cd packages/gradle/some-library \
-          && ./gradlew build
-          && ls -lisa \
-          && pwd \
-          && ls -lisa build/classes/kotlin/main/com/reachnow/ \
-          && ./gradlew -Pgpr.user=lotharschulz -Pgpr.key=${{ secrets.PCK_MNGR_TOKEN_GRADLE }} publish
+          && ./gradlew build -Pgpr.user=lotharschulz -Pgpr.key=${{ secrets.PCK_MNGR_TOKEN_GRADLE }} publish
 
 
 

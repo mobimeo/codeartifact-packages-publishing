@@ -25,9 +25,7 @@ jobs:
       - name: gradle publish
         run: |
           cd packages/gradle/some-library \
-          && ls -lisa \
-          && pwd \
-          && ./gradlew -Pgpr.user=lotharschulz -Pgpr.key=${{ secrets.PCK_MNGR_TOKEN_GRADLE }} publish
+          && ./gradlew -Pgpr.user=lotharschulz -Pgpr.key=${{ secrets.GITHUB_TOKEN }} publish
 
 
 

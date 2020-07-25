@@ -41,7 +41,7 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib"))
 
-    implementation("com.reachnow:some-library:0.0.1-SNAPSHOT-2020-06-23--22-26-38-994")
+    implementation("com.reachnow:some-library:0.0.1-SNAPSHOT-2020-07-25--11-10-02-997")
 
     implementation("ch.qos.logback:logback-classic:$logbackVersion")
 

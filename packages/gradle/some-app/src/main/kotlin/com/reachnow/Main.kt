@@ -23,7 +23,7 @@ fun Application.main() {
         }
         get("/lib"){
             val myLib = MyLibrary()
-            call.respondText( myLib.kotlinLanguage().name, ContentType.Text.Html)
+            call.respondText( myLib.busVehicle().name, ContentType.Text.Html)
         }
     }
 }

@@ -22,16 +22,24 @@ See [npm/some-library](npm/some-library) for a sample code of an NPM library.
 Create a [GitHub actions workflow](https://help.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow) 
 and get inspired by [publishing nodejs packages to GitHub Packages](https://help.github.com/en/actions/language-and-framework-guides/publishing-nodejs-packages#publishing-packages-to-github-packages).
 
-Paste the value of the GitHub personal access token in your repository secret - 
-`https://github.com/[your_namespace_or_organization]/[your_repo]/settings/secrets`.
+Paste the value of the GitHub personal access token in your repository secret:
+
+```
+https://github.com/[your_namespace_or_organization]/[your_repo]/settings/secrets
+```
+
 Label the secret (e.g. `PCK_MNGR_TOKEN_NPM`) and use the label in [GitHub Action descriptor: publish_npm.yaml](../.github/workflows/publish_npm.yaml#L33):
+
 ```yaml
     NODE_AUTH_TOKEN: ${{ secrets.PCK_MNGR_TOKEN_NPM }}
 ```
 
 Make sure your [package.json](npm/some-library/package.json#L16) contains the [correct target GitHub repository package](https://help.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#publishing-multiple-packages-to-the-same-repository).
 
-[Create an event on the GitHub platform](https://help.github.com/en/actions/reference/events-that-trigger-workflows) e.g. `push` to a branch. The package gets published to `https://github.com/[your_namespace_or_organization]/[your_repo]/packages`.
+[Create an event on the GitHub platform](https://help.github.com/en/actions/reference/events-that-trigger-workflows) e.g. `push` to a branch. The package gets published to 
+```
+https://github.com/[your_namespace_or_organization]/[your_repo]/packages
+```
 
 
 ### Application
@@ -41,12 +49,14 @@ $ cd npm/some-app
 ```
 
 Install dependency from github package manager scope (details in [Authenticating to GitHub Packages](https://help.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages)):
+
 ```sh
 $ npm login --registry=https://npm.pkg.github.com
 > Username: USERNAME
 > Password: GITHUB_PERSONAL_ACCESS_TOKEN_VALUE
 > Email: PUBLIC-EMAIL-ADDRESS
 ```
+
 
 ```sh
 $ npm i
@@ -62,9 +72,17 @@ See [gradle/some-library](gradle/some-library) for a sample Kotlin library.
 Create a [GitHub actions workflow](https://help.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow) 
 and get inspired by [publishing gradle packages to GitHub Packages](https://help.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-gradle-for-use-with-github-packages#example-using-kotlin-dsl-for-a-single-package-in-the-same-repository).
 
-Paste the value of the GitHub personal access token in your repository secret - 
-`https://github.com/[your_namespace_or_organization]/[your_repo]/settings/secrets`.
+:exclamation: publishing different versions of the same-named package under different repositories will fail. Please make sure the package name is unique within your [GitHub organisation](https://docs.github.com/en/github/setting-up-and-managing-organizations-and-teams/about-organizations) or your [user](https://docs.github.com/en/rest/reference/users) namespace.
+
+Paste the value of the GitHub personal access token in your repository secret 
+
+```
+https://github.com/[your_namespace_or_organization]/[your_repo]/settings/secrets
+```
+
+
 Label the secret (e.g. `PCK_MNGR_TOKEN_GRADLE`) and use the label in [GitHub Action descriptor: publish_npm.yaml](.github/workflows/publish_jar.yaml#26):
+
 ```sh
     ./gradlew -Pgpr.user=[your_user_name] -Pgpr.key=${{ secrets.PCK_MNGR_TOKEN_GRADLE }} publish
 ```

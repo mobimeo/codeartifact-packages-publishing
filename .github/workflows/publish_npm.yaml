@@ -1,0 +1,34 @@
+name: Node.js Publish Package
+
+on: [push]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+        registry-url: https://npm.pkg.github.com/
+        scope: '@reach-now'
+    - run: |
+        cd packages/npm/some-library \
+        && d=`date +%Y%d%m%H%M%S` \
+        && echo $d \
+        && PACKAGE_VERSION=$(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[",]//g') \
+        && echo "PACKAGE_VERSION: $PACKAGE_VERSION" \
+        && E1ST=$(echo $PACKAGE_VERSION | cut -d'.' -f 1)  \
+        && E1ST=`echo $E1ST | sed 's/ *$//g'` \
+        && echo "E1ST: $E1ST" \
+        && E2ND=$(echo $PACKAGE_VERSION | cut -d'.' -f 2)  \
+        && echo "E2ND: $E2ND" \
+        && E3RD=$(echo $PACKAGE_VERSION | cut -d'.' -f 3)  \
+        && echo "E3RD: $E3RD" \
+        && CURRENT_VERSION=1.$E2ND.$E3RD-gh-pkg-$d \
+        && echo $CURRENT_VERSION \
+        && npm version $CURRENT_VERSION --no-git-tag-version
+    - run: cd packages/npm/some-library && npm install
+    - run: cd packages/npm/some-library && npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.PCK_MNGR_TOKEN_NPM }}

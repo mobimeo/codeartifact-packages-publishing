@@ -17,3 +17,5 @@ We explored the publication usng the main tech stacks we use:
 You can use this repository to start publishing your own npm/javascript or gradle/kotlin code to GitHub Packages or AWS Codeartifact. In case your favourite tech stack is different, you might be insipired.
 
 The exploration is based on [private repositories](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-repositories) because most of our source code lives in private repositories.
+
+The related blog post [Publishing artifacts with AWS Codeartifact and GitHub Packages](https://medium.com/reachnow-tech/publishing-artifacts-with-aws-codeartifact-and-github-packages-ca6102e87a47) on [ReachNow-Tech](https://medium.com/reachnow-tech) explains steps how to publish artifacts in this repository.
